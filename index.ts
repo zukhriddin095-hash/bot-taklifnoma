@@ -1,4 +1,8 @@
 import { Bot, InlineKeyboard, Keyboard } from "grammy";
+import { createServer } from "node:http";
+createServer((_, res) => res.end("ok")).listen(
+  Number(process.env.PORT) || 3000,
+);
 
 const bot = new Bot(process.env.BOT_TOKEN!);
 const WEBAPP_URL = process.env.WEBAPP_URL!;
